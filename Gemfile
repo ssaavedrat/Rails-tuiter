@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rails_live_reload", "~> 0.3.4"
 end
 
 group :development do
@@ -70,3 +71,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Add pg_search for full text search
+gem "pg_search", "~> 2.3"
+# Add pagy for pagination
+gem "pagy", "~> 6.0"
+# Add faker for seeding the database
+gem "faker", "~> 3.2"
