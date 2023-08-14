@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Tuiter</h1>
-
 <div id="tuits">
   <% @tuits.each do |tuit| %>
     <%= render tuit %>
@@ -10,5 +8,5 @@
     </p>
   <% end %>
 </div>
-
 <%= link_to "New tuit", new_tuit_path %>
+<%== pagy_bootstrap_nav(@pagy) %>

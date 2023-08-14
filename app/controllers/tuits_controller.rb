@@ -3,7 +3,8 @@ class TuitsController < ApplicationController
 
   # GET /tuits or /tuits.json
   def index
-    @tuits = Tuit.all
+    # Integrate pagy gem
+    @pagy, @tuits = pagy(Tuit.all.order(updated_at: :desc))
   end
 
   # GET /tuits/1 or /tuits/1.json
