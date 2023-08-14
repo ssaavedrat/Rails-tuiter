@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts ("Generating fake tuits...")
+
+30.times do
+    description = Faker::Lorem.sentence(word_count: 30)
+    user_name = Faker::Name.name
+
+    Tuit.create(description: description, user_name: user_name)
+end

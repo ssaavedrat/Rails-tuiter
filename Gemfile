@@ -78,3 +78,4 @@ gem "pg_search", "~> 2.3"
 gem "pagy", "~> 6.0"
 # Add faker for seeding the database
 gem "faker", "~> 3.2"
+gem "annotate", "~> 3.2"
