@@ -1,3 +1,86 @@
+<div class="container-fluid my-3">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Vertical NavBar -->
+      <div class="ps-3 py-3 bg-light">
+        <a class="brand" href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-search"></i> Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bookmark"></i> Bookmarks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-list"></i> Lists</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i> More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <%= link_to "Tweet", new_tuit_path, class:"btn btn-primary w-100" %>
+    </div>
+    <div class="col-md-6">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit enim cumque, rerum ullam iusto ducimus nemo, quos natus laborum similique nulla reiciendis maiores quo sequi placeat ratione? Illum quisquam, sunt reiciendis animi modi iure eum ex velit, quas accusamus tempore amet voluptatibus ea quod, delectus officiis quasi minima at aut enim. Dolore, rem error earum ullam repellat ad assumenda adipisci, amet sapiente rerum distinctio excepturi! Unde rerum molestias cum voluptatibus blanditiis minus distinctio enim saepe totam placeat, mollitia accusamus ea aliquid praesentium hic maiores incidunt sunt libero sed alias obcaecati tenetur. Sit quo possimus saepe consequatur? Quam, est sint!</p>
+    </div>
+    <aside class="col-md-3">
+      <div class="mb-3 search">
+        <input type="text" placeholder="Buscar">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Trends for You</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">#SummerVibes</a></li>
+            <li><a href="#">#TechTalks</a></li>
+            <li><a href="#">#FoodieFaves</a></li>
+            <li><a href="#">#TravelInspo</a></li>
+            <li><a href="#">#MovieNights</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Sample Cards with Fake Tweets -->
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Latest Tweet</h5>
+          <p class="card-text">Just had the most amazing meal at a new restaurant! #FoodieLife 🍔🍕🍰</p>
+          <a href="#" class="card-link">Like</a>
+          <a href="#" class="card-link">Retweet</a>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Another Tweet</h5>
+          <p class="card-text">Excited to announce our upcoming tech webinar! Don't miss out on the latest trends. #TechTalks 🚀💻</p>
+          <a href="#" class="card-link">Like</a>
+          <a href="#" class="card-link">Retweet</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
 <p style="color: green"><%= notice %></p>
 <h1>Tuiter</h1>
 <div id="tuits">
