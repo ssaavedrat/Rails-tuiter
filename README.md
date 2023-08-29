@@ -90,3 +90,4 @@ A continuación, se muestran algunas capturas de pantalla de la aplicación:
 
 ¡Felicitaciones! Si has seguido todos los pasos, deberías ver la aplicación desplegada en Heroku.
 
+![Aplicación de Tuiter en Heroku](image.png)
