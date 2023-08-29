@@ -2,9 +2,7 @@
 
 <%= render @tuit %>
 
-<div>
-  <%= link_to "Edit this tuit", edit_tuit_path(@tuit) %> |
-  <%= link_to "Back to tuits", tuits_path %>
-
-  <%= button_to "Destroy this tuit", @tuit, method: :delete %>
+<div class="d-flex my-3 justify-content-around">
+  <%= button_to "Back to tuits", root_path, method: :get, class: 'btn btn-primary'%>
+  <%= button_to "Destroy this tuit", @tuit, method: :delete, class: 'btn btn-danger ' %>
 </div>

@@ -1,16 +1,28 @@
 <div id="<%= dom_id tuit %>">
-  <p>
-    <strong>ID:</strong>
-    <%= tuit.id %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= tuit.description %>
-  </p>
-
-  <p>
-    <strong>User name:</strong>
-    <%= tuit.user_name %>
-  </p>
-
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="fw-bold"><%= tuit.user_name%></span>
+          <span class="text-muted"><%= generate_twitter_username(tuit.user_name)%></span>
+          <span class="text-muted small"> • <%= time_ago_in_words(tuit.created_at) %> ago</span>
+        </h5>
+        <p class="card-text"><%= tuit.description %></p>
+        <hr>
+        <div class="d-flex justify-content-around">
+          <%# link to show %>
+          <%= link_to tuit_path(tuit) do %>
+            <i class="fas fa-link"></i>
+            Show
+          <% end %>
+          <%# link to edit %>
+          <%= link_to edit_tuit_path(tuit) do %>
+            <i class="fas fa-edit"></i>
+            Edit 
+          <% end %>
+          <a href="#" class="card-link"><i class="far fa-heart"></i> Like</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

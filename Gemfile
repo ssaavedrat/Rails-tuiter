@@ -72,7 +72,7 @@ group :test do
   gem "webdrivers"
 end
 
-# Add pg_search for full text search
+# Add pg_search
 gem "pg_search", "~> 2.3"
 # Add pagy for pagination
 gem "pagy", "~> 6.0"

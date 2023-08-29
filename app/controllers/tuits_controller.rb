@@ -5,6 +5,10 @@ class TuitsController < ApplicationController
   def index
     # Integrate pagy gem
     @pagy, @tuits = pagy(Tuit.all.order(updated_at: :desc))
+
+    if params[:query_text].present?
+       @tuits = @tuits.search_full_text(params[:query_text])
+    end
   end
 
   # GET /tuits/1 or /tuits/1.json

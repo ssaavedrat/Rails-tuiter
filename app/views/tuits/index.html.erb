@@ -1,7 +1,7 @@
 <div class="container-fluid my-3">
   <div class="row">
+    <!-- Vertical NavBar -->
     <div class="col-md-3">
-      <!-- Vertical NavBar -->
       <div class="ps-3 py-3 bg-light">
         <a class="brand" href="#"><i class="fab fa-twitter"></i></a>
       </div>
@@ -40,14 +40,26 @@
           </div>
         </div>
       </nav>
-      <%= link_to "Tweet", new_tuit_path, class:"btn btn-primary w-100" %>
+      <%= link_to "New Tuit", new_tuit_path, class:"btn btn-primary w-100" %>
     </div>
+    <!-- Main Content -->
     <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit enim cumque, rerum ullam iusto ducimus nemo, quos natus laborum similique nulla reiciendis maiores quo sequi placeat ratione? Illum quisquam, sunt reiciendis animi modi iure eum ex velit, quas accusamus tempore amet voluptatibus ea quod, delectus officiis quasi minima at aut enim. Dolore, rem error earum ullam repellat ad assumenda adipisci, amet sapiente rerum distinctio excepturi! Unde rerum molestias cum voluptatibus blanditiis minus distinctio enim saepe totam placeat, mollitia accusamus ea aliquid praesentium hic maiores incidunt sunt libero sed alias obcaecati tenetur. Sit quo possimus saepe consequatur? Quam, est sint!</p>
+      <h1 class="text-center">Tuiter</h1>
+      <p style="color: green"><%= notice %></p>
+      <div id="tuits">
+        <% @tuits.each do |tuit| %>
+          <%= render tuit %>
+        <% end %>
+      </div>
     </div>
+    <!-- Aside -->
     <aside class="col-md-3">
       <div class="mb-3 search">
-        <input type="text" placeholder="Buscar">
+        <%= form_with url: tuits_path, method: :get do |form|%>
+          <%# search favicon %>
+          <i class="fas fa-search"></i>
+          <%= form.text_field :query_text, placeholder: 'Search tuits!', value: params[:query_text]%>
+        <%end%>
       </div>
       <div class="card">
         <div class="card-body">
@@ -61,7 +73,7 @@
           </ul>
         </div>
       </div>
-      <!-- Sample Cards with Fake Tweets -->
+      <!-- Sample cards with fake tuits -->
       <div class="card mt-3">
         <div class="card-body">
           <h5 class="card-title">Latest Tweet</h5>
@@ -81,15 +93,9 @@
     </aside>
   </div>
 </div>
-<p style="color: green"><%= notice %></p>
-<h1>Tuiter</h1>
-<div id="tuits">
-  <% @tuits.each do |tuit| %>
-    <%= render tuit %>
-    <p>
-      <%= link_to "Show this tuit", tuit %>
-    </p>
+<%# Show pagy only if there is no query text %>
+<div class="d-flex justify-content-center">
+  <% if params[:query_text].blank? %>
+    <%== pagy_bootstrap_nav(@pagy) %>
   <% end %>
 </div>
-<%= link_to "New tuit", new_tuit_path %>
-<%== pagy_bootstrap_nav(@pagy) %>
